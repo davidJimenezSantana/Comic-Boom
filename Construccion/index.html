@@ -16,7 +16,7 @@
     <div class="container">
         <div class="con-inicio">
             <div class="row inicio">
-                <div class="col-8">
+                <div class="col-12 col-lg-8">
                     <div class="container-carrusel">
                         <div class="tit-inicio">
                             <img src="img/icon/comicBoomIcon.png" alt="Comic Boom">
@@ -50,18 +50,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-lg-4">
                     <div class="card card-login" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Ingresar</h5>
-                            <form method="post">
+                            <form action="logica/autenticar.php" method="post">
                                 <div class="mb-3">
                                     <label for="correo" class="form-label">Correo: </label>
-                                    <input type="email" class="form-control" id="correo" name="correo">
+                                    <input type="email" class="form-control" id="correo" name="correo"
+                                    placeholder="ejemplo@correo.com" >
                                 </div>
                                 <div class="mb-3">
                                     <label for="clave" class="form-label">Clave: </label>
-                                    <input type="password" class="form-control" id="clave" name="clave">
+                                    <input type="password" class="form-control" id="clave" name="clave"
+                                    placeholder="************">
                                 </div>                                
                                 <button class="boton btn-ent" type="submit" class="btn btn-primary">Entrar</button>
                             </form>
