@@ -1,7 +1,5 @@
 <?php
 
-require_once "usuario.php";
-
 $correo = "";
 $clave = "";
 
@@ -13,12 +11,11 @@ if(isset($_POST["clave"])){
     $clave = ($_POST["clave"]);
 }
 
-$usuario = new usuario(0, "", "", $correo, $clave, 0, 0);
+$u = new usuario(0, "", "", $correo, $clave, 0, 0);
 
-if($usuario -> autenticar()){
-    echo"ok";
+if($u -> autenticar()){
+    $_SESSION["ID"] = $u -> getIdusuario(); 
+    header("Location: index.php?pid=" . base64_encode("vista/administrador/inicioAdmin.php"));
 }else{
-    echo "falla";
+    header("Location: index.php?invalid");
 }
-
-echo $correo. " ".$clave;

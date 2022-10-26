@@ -27,7 +27,7 @@ class conexion
 
     public function extraer() //trae el resultado de la consulta 
     {
-        $this->resul->fetch_assoc();
+        return $this->resul->fetch_assoc();
     }
 
     public function numResultados() //cantidad de resultados que traes la sentencia
