@@ -26,4 +26,24 @@ class usuarioDAO
                 from usuario
                 where correo = '" . $this->correo . "' and clave = '" . md5($this->clave) . "'";
     }
+
+    public function consultarRol(){
+        return "SELECT rol_idrol
+                FROM usuario
+                WHERE idusuario = '" . $this -> idusuario . "'";
+    }
+
+    
+    public function getIdusuario()
+    {
+        return $this->idusuario;
+    }
+
+    
+    public function setIdusuario($idusuario)
+    {
+        $this->idusuario = $idusuario;
+
+        return $this;
+    }
 }

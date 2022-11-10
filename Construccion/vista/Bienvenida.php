@@ -1,28 +1,13 @@
-<!doctype html>
-<html lang="es">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>¡ComicBoom!</title>
-    <link rel="shortcut icon" href="img/icon/comicBoomIcon.png" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="vista/Estilos/style.css">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
-
-<body class="body-index">
-
     <div class="container">
         <div class="con-inicio">
-            <div class="row inicio">
+            <div class="row ini">
                 <div class="col-12 col-lg-8">
                     <div class="container-carrusel">
                         <div class="tit-inicio">
-                            <img src="img/icon/comicBoomIcon.png" alt="Comic Boom">
+                            <img src="vista/img/icon/comicBoomIcon.png" alt="Comic Boom">
                             <h1>!Comic Boom!</h1>
                         </div>
-                        <div class="cont-carrusel">
+                        <div class="cont-carrusel mb-3">
                             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -86,7 +71,3 @@
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-</body>
-
-</html>

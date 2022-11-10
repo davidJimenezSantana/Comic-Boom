@@ -46,12 +46,22 @@ class usuario
         $this->conexion->cerrar();
     }
 
+    public function consultarRol(){
+
+        $this -> conexion -> abrir();
+        $this -> usuarioDAO -> setIdusuario($this->idusuario);
+        $this -> conexion -> ejecutar($this->usuarioDAO->consultarRol());
+        $resultado = $this->conexion->extraer();    
+        $this -> rol_idrol = $resultado["rol_idrol"]; 
+        
+    }
+
+
+
     public function getCorreo()
     {
         return $this->correo;
-    }
-
-    
+    }    
 
     /**
      * Get the value of idusuario
