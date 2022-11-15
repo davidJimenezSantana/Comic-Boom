@@ -1,12 +1,4 @@
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-
--- -----------------------------------------------------
--- Schema comicBoom
--- -----------------------------------------------------
-
 -- -----------------------------------------------------
 -- Schema comicBoom
 -- -----------------------------------------------------
@@ -150,6 +142,63 @@ CREATE TABLE IF NOT EXISTS `comicBoom`.`factura_has_producto` (
 ENGINE = InnoDB;
 
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+
+-- -----------------------------------------------------
+-- Table `comicBoom`.`tipo`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `comicBoom`.`tipo` (
+  `idtipo` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idtipo`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `comicBoom`.`movimiento`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `comicBoom`.`movimiento` (
+  `idmovimiento` INT NOT NULL AUTO_INCREMENT,
+  `fecha` DATE NOT NULL,
+  `hora` VARCHAR(45) NOT NULL,
+  `observaciones` VARCHAR(500) NULL,
+  `tipo_idtipo` INT NOT NULL,
+  `usuario_idusuario` INT NOT NULL,
+  PRIMARY KEY (`idmovimiento`),
+  INDEX `fk_movimiento_tipo1_idx` (`tipo_idtipo` ASC) ,
+  INDEX `fk_movimiento_usuario1_idx` (`usuario_idusuario` ASC) ,
+  CONSTRAINT `fk_movimiento_tipo1`
+    FOREIGN KEY (`tipo_idtipo`)
+    REFERENCES `comicBoom`.`tipo` (`idtipo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_movimiento_usuario1`
+    FOREIGN KEY (`usuario_idusuario`)
+    REFERENCES `comicBoom`.`usuario` (`idusuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `comicBoom`.`producto_has_movimiento`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `comicBoom`.`producto_has_movimiento` (
+  `producto_idproducto` INT NOT NULL,
+  `movimiento_idmovimiento` INT NOT NULL,
+  `unidades` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`producto_idproducto`, `movimiento_idmovimiento`),
+  INDEX `fk_producto_has_movimiento_movimiento1_idx` (`movimiento_idmovimiento` ASC) ,
+  INDEX `fk_producto_has_movimiento_producto1_idx` (`producto_idproducto` ASC) ,
+  CONSTRAINT `fk_producto_has_movimiento_producto1`
+    FOREIGN KEY (`producto_idproducto`)
+    REFERENCES `comicBoom`.`producto` (`idproducto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_producto_has_movimiento_movimiento1`
+    FOREIGN KEY (`movimiento_idmovimiento`)
+    REFERENCES `comicBoom`.`movimiento` (`idmovimiento`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;

@@ -1,15 +1,15 @@
-
-.body-index{
-    background-color: #111111;;
+.body-index {
+    background-color: #111111;
+    ;
 }
 
-.con-inicio{
+.con-inicio {
     padding: 80px 0px;
     display: flex;
     align-items: center;
 }
 
-.ini{
+.ini {
     height: calc(100vh - 15%);
     display: flex;
     align-items: center;
@@ -20,34 +20,34 @@
     box-shadow: 0px 0px 15px 5px #b3353b;
 }
 
-.container-carrusel{
+.container-carrusel {
     padding: 0px 7%;
 }
 
-.tit-inicio{
+.tit-inicio {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 49px;
 }
 
-.tit-inicio img{
+.tit-inicio img {
     height: 75px;
     margin: 7px;
 }
 
-.cont-carrusel{
+.cont-carrusel {
     box-shadow: 0px 0px 7px 2px #b3353b;
     border-radius: 6px;
 }
 
-.card-login{
+.card-login {
     background-color: transparent !important;
     box-shadow: 0px 0px 7px 2px #b3353b;
     margin: 40px auto;
 }
 
-.boton{
+.boton {
     color: snow;
     background-color: #9f101a;
     border: 1px solid snow;
@@ -55,7 +55,7 @@
     padding: 1px 15px;
 }
 
-.boton:hover{
+.boton:hover {
     color: #9f101a;
     background-color: snow;
     border: 1px solid #9f101a;
@@ -63,29 +63,95 @@
 }
 
 
-.btn-ent{
+.btn-ent {
     width: 100%;
 }
 
-.btn-salir{
+.btn-salir {
     color: snow;
     align-content: center;
     display: flex;
     text-decoration: none;
 }
- 
-.btn-salir:hover{
+
+.btn-salir:hover {
     color: #9f101a !important;
     font-weight: bolder;
 }
- 
- 
-.inicio-Admin{
-    background-color: #1e1e1e !important; 
+
+
+.inicio-Admin {
+    background-color: #1e1e1e !important;
     border-radius: 5px;
 }
 
-.card:hover{
+.card:hover {
     border: 1px solid #9f101a;
-    box-shadow: 2px 2px 2px 6px #9f101a;
+    box-shadow: 0px 0px 5px 3px black;
+}
+
+.perfil-user {
+    display: flex;
+    align-items: center;
+}
+
+.perfil-user img {
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.footer {
+    margin: 20px;
+    text-align: center;
+    color: darkgrey;
+}
+
+.graficos {
+    display: flex;
+    margin: 40px 80px;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ESTILOS MODULOS */
+
+.body-modulo {
+    background-color: #1e1e1e !important;
+    border-radius: 5px;
+    color: snow;
+}
+
+.titulo-modulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-modulo box-icon {
+    width: 42px;
+    height: 42px;
+}
+
+.opc_modulo {}
+
+.btn-modulo {
+    color: snow;
+    background-color: transparent;
+    border: 1px solid #9f101a;
+    border-radius: 15px;
+    padding: 1px 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.btn-modulo:hover {
+    color: #9f101a;
+    font-weight: bolder;
+    background-color: transparent;
+    border: 1px solid #9f101a;
+    border-radius: 15px;
+    padding: 1px 15px;
+    text-decoration: none;
 }
